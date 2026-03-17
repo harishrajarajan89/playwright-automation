@@ -1,4 +1,4 @@
-export class ExcetionPage{
+export class ExceptionPage{
     constructor(page){
         this.page = page;
         this.addBtn = page.getByRole('button',{name:'Add'});

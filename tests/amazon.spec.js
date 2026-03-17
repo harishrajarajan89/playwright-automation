@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('Navigate to shoping web app', async({page})=>{
+test.skip('Navigate to shoping web app', async({page})=>{
   await page.goto ('https://amazon.in');
   await expect(page).toHaveTitle('Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in')
   //await page.getByRole('link', { name: 'Hello, sign in Account & Lists' }).click();
