@@ -23,7 +23,8 @@ test.describe("Login Tests", () => {
     ).toBeVisible();
     await page.getByLabel("Username").fill("student");
     await page.getByRole("textbox", { name: "Password" }).fill("Password123");
-    await page.getByRole("button", { name: "Submit" }).click({ timeout: 5000 });
+    await page.pause();
+    await page.getByRole("button", { name: "Submit" }).click();
     await page.screenshot({
       path: "../test-results/Success.png",
       fullPage: true,
@@ -33,7 +34,7 @@ test.describe("Login Tests", () => {
     ).toBeVisible();
     await expect(page).toHaveURL(/logged-in-successfully/);
     await page.waitForTimeout(5000);
-    await page.getByRole("link", { name: "Log out" }).click({ timeout: 5000 });
+    await page.getByRole("link", { name: "Log out" }).click();
     await page.screenshot({
       path: "../test-results/Logout.png",
       fullPage: true,

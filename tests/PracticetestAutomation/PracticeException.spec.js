@@ -17,7 +17,7 @@ test('Add first row', async({exceptionPage, page})=>{
 //4. Type text into the second input field
 //5. Push Save button using locator By.name(“Save”)
 //6. Verify text saved
-test.only('TC2_Exceptions', async({exceptionPage,page})=>{
+test('TC2_Exceptions', async({exceptionPage,page})=>{
     //const obj = new ExceptionPage(page);
     await exceptionPage.goto();
     await exceptionPage.addBtn.click();
@@ -27,7 +27,7 @@ test.only('TC2_Exceptions', async({exceptionPage,page})=>{
     await exceptionPage.saveBtn.click();
     await expect(page.getByRole('textbox').nth(1)).toHaveValue('Row 2 text');
     const msg = await page.getByRole('textbox').nth(1).inputValue();
-    console.log(msg);
+    //console.log(msg);
     expect(msg.includes("Row 2")).toBeTruthy();
     await expect(exceptionPage.row2Input).toHaveValue('Row 2 text'); 
     console.log("Passed: 2nd row is visible!");
