@@ -1,6 +1,20 @@
 # Playwright Automation
 
+> 📝 This README was generated with the assistance of **Amazon Q (AI)** — see [AI Assistance](#ai-assistance) section for details.
+
 A test automation project built with [Playwright](https://playwright.dev/) and JavaScript, targeting the [Practice Test Automation](https://practicetestautomation.com) website.
+
+## 🚀 Live HTML Report
+
+The Playwright HTML report is deployed and accessible at:
+
+🔗 **[https://playwright-automation.vercel.app](https://playwright-automation.vercel.app)**
+
+## 🎥 Demo Video
+
+A demo recording of the test execution is available at:
+
+📁 `tests/Reports/2026-03-22 22-52-39.mp4`
 
 ## Tech Stack
 
@@ -8,6 +22,7 @@ A test automation project built with [Playwright](https://playwright.dev/) and J
 - **JavaScript** (ES Modules)
 - **Browser** - Chromium
 - **CI/CD** - GitHub Actions
+- **Deployment** - Vercel
 
 ## Project Structure
 
@@ -15,17 +30,23 @@ A test automation project built with [Playwright](https://playwright.dev/) and J
 e:\Playwright\
 ├── .github/
 │   └── workflows/
-│       └── playwright.yml       # GitHub Actions CI/CD pipeline
-├── ss/                          # Screenshots on test failure
-├── test-results/                # Test artifacts
+│       └── playwright.yml            # GitHub Actions CI/CD pipeline
+├── ss/                               # Screenshots on test failure
+├── test-results/                     # Test artifacts
 ├── tests/
-│   └── PracticetestAutomation/
-│       ├── Pages/
-│       │   └── ExceptionPage.js # Page Object Model
-│       ├── LoginTest.spec.js    # Login test cases
-│       ├── PracticeException.spec.js # Exception handling tests
-│       └── tableTest.spec.js    # Table tests (in progress)
-├── playwright.config.js         # Playwright configuration
+│   ├── PracticetestAutomation/
+│   │   ├── Pages/
+│   │   │   └── ExceptionPage.js      # Page Object Model
+│   │   ├── Fixture.js                # Playwright Fixtures
+│   │   ├── LoginTest.spec.js         # Login test cases
+│   │   ├── PracticeException.spec.js # Exception handling tests
+│   │   └── tableTest.spec.js         # Table tests (in progress)
+│   ├── Reports/
+│   │   ├── index.html                # HTML report
+│   │   └── 2026-03-22 22-52-39.mp4  # Demo video
+│   ├── amazon.spec.js
+│   └── example.spec.js
+├── playwright.config.js              # Playwright configuration
 └── package.json
 ```
 
@@ -42,7 +63,7 @@ e:\Playwright\
 | Test | Description |
 |---|---|
 | Add first row | Verify dynamic row addition |
-| TC2_Exceptions | Element interactability exception (in progress) |
+| TC2_Exceptions | Element interactability exception |
 
 ## Getting Started
 
@@ -84,29 +105,9 @@ npx playwright test --debug
 # view html report
 npx playwright show-report
 
-#Demo (project=chromium -> only runs on chrome, workers=1 -> to run in single thread, trace=on -> to get the report with snapshot of every step, headed-> to see browser)
+# run with full options (chromium only, single thread, trace enabled, headed)
 npx playwright test --project=chromium --workers=1 --trace=on --headed
 ```
-## How to Run the Project
-
-1. Clone the repository
-   git clone https://github.com/harishrajarajan89/playwright-automation.git
-
-2. Navigate to project folder
-   cd playwright-automation
-
-3. Install dependencies
-   npm install
-
-4. Install Playwright browsers
-   npx playwright install
-
-5. Run tests
-   npx playwright test
-
-6. View HTML report
-   npx playwright show-report
-
 
 ## Features
 
@@ -114,12 +115,23 @@ npx playwright test --project=chromium --workers=1 --trace=on --headed
 - ✅ Assertions — `toHaveTitle`, `toHaveURL`, `toContainText`, `toBeVisible`
 - ✅ Screenshots on test failure saved to `ss/` folder
 - ✅ Soft assertions (`expect.soft`)
-- ✅ Viewport setup in `beforeEach`
 - ✅ Page Object Model (`ExceptionPage.js`)
+- ✅ Fixtures (`Fixture.js`)
+- ✅ `test.describe` for grouping tests
+- ✅ `beforeEach` / `afterEach` hooks
 - ✅ CI/CD pipeline with GitHub Actions
-
+- ✅ HTML report deployed on Vercel
 
 ## CI/CD
 
 Tests automatically run on every `push` and `pull_request` to `main` or `master` branch via GitHub Actions. The HTML report is uploaded as an artifact and retained for 30 days.
 
+## AI Assistance
+
+The following tasks were assisted by AI:
+
+| Area | What AI helped with |
+
+| README | Generated and maintained this README file |
+| Git setup | Guided Git installation, PATH configuration, and pushing to GitHub |
+| Learning roadmap | Provided structured Playwright learning path with examples |
