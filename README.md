@@ -14,7 +14,7 @@ The Playwright HTML report is deployed and accessible at:
 
 A demo recording of the test execution is available at:
 
-📁 `tests/Reports/2026-03-22 22-52-39.mp4`
+📁 `tests/Reports/2026-03-22 22-52-39.mp4` & https://drive.google.com/file/d/1yzxTEJBQUf52LGLHlLniAhuCfAoXJhR4/view?usp=sharing
 
 ## Tech Stack
 
@@ -26,29 +26,6 @@ A demo recording of the test execution is available at:
 
 ## Project Structure
 
-```
-e:\Playwright\
-├── .github/
-│   └── workflows/
-│       └── playwright.yml            # GitHub Actions CI/CD pipeline
-├── ss/                               # Screenshots on test failure
-├── test-results/                     # Test artifacts
-├── tests/
-│   ├── PracticetestAutomation/
-│   │   ├── Pages/
-│   │   │   └── ExceptionPage.js      # Page Object Model
-│   │   ├── Fixture.js                # Playwright Fixtures
-│   │   ├── LoginTest.spec.js         # Login test cases
-│   │   ├── PracticeException.spec.js # Exception handling tests
-│   │   └── tableTest.spec.js         # Table tests (in progress)
-│   ├── Reports/
-│   │   ├── index.html                # HTML report
-│   │   └── 2026-03-22 22-52-39.mp4  # Demo video
-│   ├── amazon.spec.js
-│   └── example.spec.js
-├── playwright.config.js              # Playwright configuration
-└── package.json
-```
 
 ## Test Cases
 
@@ -133,5 +110,5 @@ The following tasks were assisted by AI:
 | Area | What AI helped with |
 
 | README | Generated and maintained this README file |
-| Git setup | Guided Git installation, PATH configuration, and pushing to GitHub |
+| Git setup | Guided Git installation, PATH configuration |
 | Learning roadmap | Provided structured Playwright learning path with examples |
