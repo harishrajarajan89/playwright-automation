@@ -4,7 +4,7 @@ import path from "path";
 test.describe("Login Tests", () => {
 
   test.beforeEach(async ({ page }) => {
-    await page.goto("https://practicetestautomation.com/practice-test-login/");
+    await page.goto("https://practicetestautomation.com/practice-test-login/", { waitUntil: 'domcontentloaded' });
     await expect(page).toHaveTitle("Test Login | Practice Test Automation");
   });
   test.afterEach(async ({ page }, testInfo) => {
@@ -16,14 +16,13 @@ test.describe("Login Tests", () => {
     }
   });
   test("Login via automation", async ({ page }) => {
-    // await page.goto('https://practicetestautomation.com/practice-test-login/');
+    await page.goto('https://practicetestautomation.com/practice-test-login/');
     // await expect(page).toHaveTitle('Test Login | Practice Test Automation')
     await expect(
       page.getByRole("heading", { name: "Login Test" }),
     ).toBeVisible();
     await page.getByLabel("Username").fill("student");
     await page.getByRole("textbox", { name: "Password" }).fill("Password123");
-    await page.pause();
     await page.getByRole("button", { name: "Submit" }).click();
     await page.screenshot({
       path: "../test-results/Success.png",
@@ -58,7 +57,7 @@ test.describe("Login Tests", () => {
   });
 
   test("Incorrect password check", async ({ page }) => {
-    //await page.goto("https://practicetestautomation.com/practice-test-login/");
+    await page.goto("https://practicetestautomation.com/practice-test-login/");
     expect(await page.title()).toContain("Test Login");
     let userName = page.getByLabel("Username");
     const passWord = page.getByRole("textbox", { name: "Password" });

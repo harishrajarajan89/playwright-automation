@@ -6,3 +6,11 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+
+# Large files
+*.exe
+*.zip
+*.msi
+
+# Screenshots
+/ss/
