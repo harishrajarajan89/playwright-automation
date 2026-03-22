@@ -83,7 +83,30 @@ npx playwright test --debug
 
 # view html report
 npx playwright show-report
+
+#Demo (project=chromium -> only runs on chrome, workers=1 -> to run in single thread, trace=on -> to get the report with snapshot of every step, headed-> to see browser)
+npx playwright test --project=chromium --workers=1 --trace=on --headed
 ```
+## How to Run the Project
+
+1. Clone the repository
+   git clone https://github.com/harishrajarajan89/playwright-automation.git
+
+2. Navigate to project folder
+   cd playwright-automation
+
+3. Install dependencies
+   npm install
+
+4. Install Playwright browsers
+   npx playwright install
+
+5. Run tests
+   npx playwright test
+
+6. View HTML report
+   npx playwright show-report
+
 
 ## Features
 
@@ -94,10 +117,9 @@ npx playwright show-report
 - ✅ Viewport setup in `beforeEach`
 - ✅ Page Object Model (`ExceptionPage.js`)
 - ✅ CI/CD pipeline with GitHub Actions
-- 🔲 Cross browser testing (Firefox, Safari)
-- 🔲 Table tests
-- 🔲 POM for Login page
+
 
 ## CI/CD
 
 Tests automatically run on every `push` and `pull_request` to `main` or `master` branch via GitHub Actions. The HTML report is uploaded as an artifact and retained for 30 days.
+
